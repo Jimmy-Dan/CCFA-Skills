@@ -12,31 +12,74 @@ metadata:
 
 # CCF Humanization
 
-## Required First Preflight
+## Family File Contract
 
-Apply this baseline before every CCFA skill and contributor, including research, review, retrieval, experiments, visuals, and maintenance. Then apply [ccf-common](../ccf-common/SKILL.md), once, without recursive re-entry. Reuse applicable active rules at handoffs; refresh rules that changed or were lost. Specialist skills retain ownership. This activation creates no report, warning file, editing pass, or separate agent.
+Before file work, reuse canonical paths and one task/artifact working directory; default to project-root `ccfa-workfiles/<purpose>/<artifact-id>/`. Update in place, preserve inputs, and use UTF-8 with Chinese-text checks. Apply [artifact-contracts.md](../ccf-common/references/artifact-contracts.md) for naming, ownership, and task-created cleanup; handoffs inherit these paths.
+
+## Collaboration Contract
+
+This is the first required family preflight. Apply the baseline below, then activate [ccf-common](../ccf-common/SKILL.md) before specialist work. The two preflights bootstrap once without recursively re-entering each other; reuse applicable rules across contributors.
+
+Integrate necessary specialist contributions under one owner; reuse valid prerequisites and verify affected results. Follow the [cooperation routes](../ccf-common/references/routing.md) without duplicate reports.
+
+## Invocation Controls
+
+**CCFA Handoff Mode: PARTIAL (Recommended).** Follow `metadata.ccf_skill_controls.handoff_question_mode`, `../ccf-common/references/handoff-modes.md`, and `../ccf-common/references/task-modes.md`.
+
+Activate this first for every CCFA task and contributor, including planning, retrieval, review, auditing, rendering, scaffolding, and maintenance. Apply the family baseline below before `ccf-common` and specialist execution. Reuse an already loaded, applicable baseline at handoffs; refresh changed or lost rules. Prose editing and experiment checks depend on the actual task, but baseline activation is universal. Specialist skills retain ownership and explicit user/host constraints still apply.
 
 ## Family Baseline
 
-- Communicate the actual question, scientific content, evidence, and decisions directly. Remove imagined objections, empty assurances, repetitive warnings, and process narration. Keep real criticism, meaningful uncertainty, scientific facts, source quotations, and mandatory checks. Do not adjust review scores to sound more agreeable.
-- Use existing authorization and evidence. Ask only about an unresolved decision that changes the work; continue independent authorized parts. A checklist alone does not justify new experiments or a smaller research objective.
-- In prose, ideas and experiment plans, state the scientific point in the field's ordinary terms, then explain the relation that makes it follow. Preserve the right level of abstraction: a computation, a theoretical distinction and a research motivation need different explanations. Use `verifiable`, `feasible`, `evidence` or `belief` when they denote an actual property or defined object, not as approval labels. A comparison needs real alternatives and a qualifier needs a material condition; a proposed mechanism needs a rationale, not completed results.
-- Compose the affirmative scientific argument before checking surface style. Each next sentence should explain, develop or support the preceding point; adding a transition word cannot supply a missing reason. Preserve conceptual, theoretical and interpretive explanations as well as computations. Readiness checks, reviewer expectations and diagnostic vocabulary stay in working context, not the manuscript.
-- Preserve assumptions, negative findings, protocol facts, calibrated uncertainty, citations, equations, numbers, terminology, and disclosures. Negation and hedging can be scientifically necessary. Keep the author's sentence-final emphasis, synthesis, and broader significance; connect it to the paragraph and distinguish prospective implications from observed results.
-- When execution becomes unreliable, narrow the next action while preserving the goal and evidence standard. Recover from actual artifacts through Common's continuity rules instead of adding cautionary prose or replacing the deliverable with an easier task.
+Lead with the requested answer, decision, or artifact, then give the evidence and explanation needed to use it. Apply the communication and information-preservation decisions in `references/humanization-policy.md` across CCFA planning, retrieval, review, auditing, coding, visuals, maintenance, and writing. These decisions apply to user-visible updates as well as deliverables.
 
-## Apply Only Relevant Detail
+Use existing authorization and evidence. Ask for an unresolved decision only when it materially changes the work; continue unaffected authorized work. Give a concrete blocker and its consequence briefly, then complete the supported remainder. Keep scientific assessment independent: state a supported criticism or correction directly. Preserve the requested research objective during recovery and adapt the next executable step to the actual artifacts.
 
-| Current work | What to load or do |
-| --- | --- |
-| Family preflight or ordinary clear local edit | Apply the baseline above and continue with Common and the owner. No read-all policy pass. |
-| Requested humanization or an actual defensive/unclear passage | Read the relevant sentence decisions, repairs, punctuation, or acceptance checks in [humanization-policy.md](references/humanization-policy.md). Recover the scientific message, repair the sentence relationships, then check wording. |
-| Reported comparison or executable experiment change | Read [experiment-discipline.md](references/experiment-discipline.md) when method identity or protocol matters. A supplied method can be drafted without demanding new runs or checkpoints. |
-| Full section or paper revision | Check the resulting argument once; run the writer's [prose checker](../ccf-paper-writer/scripts/check_prose_quality.py) when available. Inspect candidates in context, retain justified technical language, and rerun only changed or unresolved content. |
-| Concrete unresolved scientific decision | Use the policy's warning contract for the dependent claim only; continue unaffected work. Ordinary accurate edits need no extra approval. |
+For ordinary communication, apply the concise Core Rule below. Read the detailed sentence decisions and examples for authorized prose editing or a concrete ambiguity. This preflight adds no separate report, warning file, or agent. Specialist skills retain ownership; source quotations, accurate critical findings, meaningful uncertainty, and mandatory checks remain part of the task.
 
-Prose edits require an authorized writing task. Review-only work diagnoses without rewriting; non-prose work keeps the baseline without starting prose checks. Return the requested artifact in its original format, without a compulsory style report. Keep internal confirmation and version-gate status out of manuscript prose.
+## Core Rule
 
-## Shared Contracts
+Answer the actual question first. State the object, operation, relationship, evidence, and result directly. Remove empty assurances, imagined objections, pleasantries, repetitive warnings, stacked hedges, and empty closing summaries. Default to affirmative, concretely scoped statements; avoid unsolicited 'not A but B' framing and denial-led boundary statements. Use a contrast when the user requests it or when correcting a material error requires it. Keep a concrete risk explanation brief and relevant to the current decision. Keep ordinary knowledge discussion focused on its substance and answer complex or sensitive questions at the depth supported by the task.
 
-Handoff mode remains **PARTIAL**, governed by the preserved metadata and Common's [handoff modes](../ccf-common/references/handoff-modes.md). Before file work, reuse canonical paths and one stable task directory, defaulting to `ccfa-workfiles/<purpose>/<artifact-id>/`; update current artifacts in place and preserve inputs. Apply [artifact-contracts.md](../ccf-common/references/artifact-contracts.md) for ownership, cleanup, and UTF-8/Chinese checks. Common resolves scope, prerequisites, and applicable preferences before specialist execution.
+Use the strongest conclusion supported by the evidence. State genuine uncertainty as the specific unresolved question and its reason. Preserve the population, measurement, numbers and units, time, comparison, conditions, evidence strength, negative results, actual work status, citations, equations, and terminology. When empty framing and useful content share a sentence, rewrite the framing and retain the useful content attached to the correct claim. Leave already clear, accurate language intact. Keep supplied plans distinguishable from observations and missing results explicitly pending.
+
+Keep method confirmation and version-gate status internal. Describe the actual method and relevant configuration naturally. Use supplied specifications for method drafting, cited evidence for prior work, and verified full configurations for reported comparisons; perform additional checks when a concrete factual or logical gap calls for them.
+
+## Modes
+
+- `family-preflight`: always apply the baseline before any CCFA specialist; no manuscript or experiment artifact is required.
+- `manuscript-humanization`: revise defensive prose while preserving scientific content and source format.
+- `experiment-humanization`: apply the same prose standard to final experiment descriptions and tables; preserve full-method comparisons and labeled ablations.
+- `warning-only`: identify a concrete unresolved scientific decision without modifying its dependent artifact.
+
+## Workflow
+
+For `family-preflight`, apply the baseline, ensure `ccf-common` is active, and continue the requested specialist task. The following editing workflow applies only when the task includes relevant prose or experiment artifacts; do not run it merely to complete the universal preflight.
+
+1. Identify the requested artifact, existing authorization, and whether the input is prose, a proposed design, or reported results. Read `references/humanization-policy.md` for the sentence decisions and bilingual repair examples.
+2. Recover each paragraph's scientific message and how its sentences support it. Repair the actual reason, evidence, or consequence linking adjacent points; adding connectors or replacing a few words is insufficient. Delete empty self-defense instead of moving it into a warning block.
+3. Remove repeated caveats across sections. Express scope where it changes interpretation; do not require every abstract, paragraph, caption, or conclusion to end with a limitation.
+4. Preserve material facts and calibrated uncertainty in the authorized edit. If a decision requires new evidence or a research-scope change, isolate that decision and continue unaffected work. Do not edit a source file merely to encode a warning.
+5. For actual publication comparisons or executable experiment changes, load `references/experiment-discipline.md`. Preserve a verified identity and full configuration in the internal gate; keep legitimate ablations clearly labeled. Run this step only when the task needs it.
+6. Apply the existing punctuation and terminology preferences after the scientific argument is sound. For full sections or papers, run `../ccf-paper-writer/scripts/check_prose_quality.py` when available and inspect its candidate locations in context. Do not rewrite correct scientific language merely to clear a heuristic warning.
+7. Read the final prose once. Check that rhetorical caution has not been replaced by hype, factual omission, or a different scientific claim. Rerun a check only for changed text or an unresolved finding.
+8. Return the requested artifact in its original format. When acting as a sidecar, return ownership to the content skill; do not append a process report to ordinary prose.
+
+## Warning Contract
+
+Use only for a concrete decision that cannot be resolved from supplied evidence and existing authorization:
+
+```text
+CCF Humanization Warning: not inserted into artifacts
+Affected claim / file / experiment:
+Evidence gap and material consequence:
+Decision needed:
+Materiality: advisory / blocking
+File changes made for this warning: none
+```
+
+`blocking` applies to the dependent claim or change, not the entire task. Style choices, already documented limitations, and accurate local claim narrowing are ordinary authorized edits.
+
+## References
+
+- `references/humanization-policy.md`: direct scientific voice, sentence/paragraph repair, bilingual examples, material facts, warning-only decisions, punctuation, and checksum policy.
+- `references/experiment-discipline.md`: full-method comparisons, supplied specifications, ablations, and proportionate smoke checks.
